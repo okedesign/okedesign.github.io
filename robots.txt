@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /some-path/
+
+
+
+Sitemap: https://okedesign.github.io/sitemap.xml
+Sitemap: https://okedesign.github.io/hasil.xml
