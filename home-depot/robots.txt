@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /some-path/
+
+
+
+Sitemap: https://okedesign.github.io/home-depot/sitemap.xml
+Sitemap: https://okedesign.github.io/home-depot/hasil.xml
