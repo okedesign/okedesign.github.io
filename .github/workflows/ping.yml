@@ -1,0 +1,51 @@
+# YAML
+
+# You can name this whatever you want:
+name: Ping Google About Updated Sitemap
+
+# Controls when the action will run:
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  # Triggers the workflow on push events, only on the master branch, and only
+  # if sitemap.xml was updated:
+  push:
+    # If your primary ("production") branch is "main" (or anything else) instead
+    # of "master" you will need to update this line:
+    branches: [ main ]
+    # TODO: Update the filepath below to be the filepath to the live /
+    # production / rendered sitemap.xml in your GitHub repo:
+    paths:
+      - /sitemap.xml
+      - /hasil.xml
+
+  # This allows you to run this workflow manually from the Actions tab in your
+  # GitHub repo:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in
+# parallel:
+jobs:
+  # This workflow contains a single job called "ping" (the ID for this job):
+  ping:
+    # Again this can be whatever name you like:
+    name: Ping Google
+    # The type of runner that the job will run on:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the
+    # job:
+    steps:
+      # Runs a single command using the runners shell:
+      - name: Ping sitemap google
+        run: curl http://www.google.com/ping?sitemap=https://okedesign.github.io/sitemap.xml
+      - name: Ping sitemap bing
+        run: curl https://www.bing.com/ping?sitemap=https://okedesign.github.io/sitemap.xml
+      - name: Ping sitemap yandex
+        run: curl https://webmaster.yandex.ru/ping?sitemap=https://okedesign.github.io/sitemap.xml
+      - name: Ping sitemap google
+        run: curl http://www.google.com/ping?sitemap=https://okedesign.github.io/hasil.xml
+      - name: Ping sitemap bing
+        run: curl https://www.bing.com/ping?sitemap=https://okedesign.github.io/hasil.xml
+      - name: Ping sitemap yandex
+        run: curl https://webmaster.yandex.ru/ping?sitemap=https://okedesign.github.io/hasil.xml
